@@ -1,0 +1,6 @@
+.git*
+.eslint*
+test/
+.editorconfig
+.jshint*
+coverage

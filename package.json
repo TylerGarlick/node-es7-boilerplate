@@ -1,0 +1,31 @@
+{
+  "name": "node-es7-boilerplate",
+  "version": "1.0.0",
+  "description": "Babel.js + eslint + wallaby.js = Fawesome!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://TylerGarlick@github.com/TylerGarlick/node-es7-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TylerGarlick/node-es7-boilerplate/issues"
+  },
+  "homepage": "https://github.com/TylerGarlick/node-es7-boilerplate#readme",
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2016-node5": "^1.1.2",
+    "babel-register": "^6.3.13",
+    "code": "^2.1.0",
+    "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "babel-register": "^6.3.13"
+  }
+}
