@@ -2,6 +2,8 @@
 
 > Getting started with node / es2017
 
+[![Build Status](https://travis-ci.org/TylerGarlick/node-es7-boilerplate.svg?branch=master)](https://travis-ci.org/TylerGarlick/node-es7-boilerplate)
+
 ## Usage
 
 ```bash
