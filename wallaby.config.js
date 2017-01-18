@@ -1,33 +1,24 @@
-'use strict';
+module.exports = wallaby => ({
+  files: [
+    'src/**/*',
+    'test/**/*',
+    '!test/**/*.test.js'
+  ],
 
-const Fs = require('fs');
-const Path = require('path');
+  tests: [
+    'test/**/*.test.js'
+  ],
 
-const babelConfiguration = JSON.parse(Fs.readFileSync(Path.join(__dirname, '.babelrc')));
-babelConfiguration.babel = require('babel-core');
+  env: {
+    type: 'node',
+    runner: 'node'
+  },
 
-module.exports = (wallaby) => {
-  return {
-    files: [
-      'lib/**/*',
-      //'plugins/**/*',
-      'test/**/*',
-      { pattern: '**/*.tests.js', ignore: true }
-    ],
-    tests: [
-      '**/*.tests.js'
-    ],
-    env: {
-      type: 'node',
-      //params: {
-      //  env: 'NODE_ENV=katon;'
-      //}
-    },
-    bootstrap: () => {
-      require('./test/helper');
-    },
-    compilers: {
-      '**/*.js': wallaby.compilers.babel(babelConfiguration)
-    }
+  testFramework: 'ava',
+
+  setup: () => require('babel-polyfill'),
+
+  compilers: {
+    '**/*.js': wallaby.compilers.babel()
   }
-};
+});

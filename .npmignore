@@ -1,5 +1,7 @@
 .git*
 .eslint*
+src
+docs
 test/
 .editorconfig
 .jshint*

@@ -1,6 +1,1 @@
-'use strict';
-
-require("babel-register");
-require('babel-polyfill');
-
-module.exports = require('./lib');
+module.exports = require('./dist');
