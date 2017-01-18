@@ -1,5 +1,0 @@
-machine:
-  timezone:
-    America/Denver
-  node:
-    version: 5
