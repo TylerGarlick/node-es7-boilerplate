@@ -1,12 +1,45 @@
-# Node ES2017 Boilerplate
+# Assignment - Await/Async
 
-> Getting started with node / es2017
+> Using the async/await pattern to control parallelism
 
-[![Build Status](https://travis-ci.org/TylerGarlick/node-es7-boilerplate.svg?branch=master)](https://travis-ci.org/TylerGarlick/node-es7-boilerplate)
+## Introduction
 
-## Usage
+The last evolution of the asynchronous code is to use the async/await pattern.  By decorating a function with the `async` keyword we are effectively telling JavaScript that our function in simplistic terms will return a promise.  To use the `async` keyword simply place it before the function definition.
 
-```bash
-$ git clone https://github.com/TylerGarlick/node-es7-boilerplate.git [name of project]
+When a function is decorated with the `async` keyword, at least one `await` keyword must be used.  Notice in the code below that the await keyword is use before the  `values.reduce()`
+  
+```js
+const add = async (...values) => await values.reduce((prev, current) => prev + current, 0);
+
+const result = add(1,2,3); // 6
 ```
+
+### The things we can `await`
+
+The most exciting part about the `async/await` pattern is the simplicity at which we can incorporate the pattern.  Almost any function can turn convert into an `async` one, and the `await` keyword can be used on a Promise or value.  Meaning, we can literally await anything. 
+ 
+When the `await` is encountered and the thing that it's waiting for is not a promise, `await` will wrap it in a promise, and you can think of the code implementation to look like similar to `Promise.resolve(value)`.
+
+### When should we use `async/await`?
+
+The usual answer to these questions is '... it depends', and it really does depend on what you are doing.  I've taken the slightly more aggressive  mentality of applying `async` to just about everything that makes sense.  I honestly, use it all over the place.
+  
+I like the pattern because it turns asynchronous code into code that appears synchronous.
+
+## Assignment
+
+> Using the [Pokemon API](https://pokeapi.co/docsv2/#) once again and the library `pokedex-promise-v2`
+
+1. Create an abject literal that contains two fields: `{ pokemon: {}, items: {} }`.  Export this object literal as the default.
+2. Within the `pokemon` attribute, create a function `allNames()`.  Use the `async` keyword to retrieve all the names.  The return value should be an array of pokemon's name, and their id's: `[ { name, id }]` (You'll need to strip the id out of the url field)
+3. 
+
+
+
+
+### Resources
+
+* [await definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+* [async definition](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
 
