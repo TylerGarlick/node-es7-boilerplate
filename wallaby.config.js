@@ -1,17 +1,17 @@
 module.exports = wallaby => ({
   files: [
+    '*.js',
     'src/**/*',
     'test/**/*',
-    '!test/**/*.test.js'
+    '!test/**/*.test.js',
   ],
 
   tests: [
-    'test/**/*.test.js'
+    'test/**/*.test.js',
   ],
 
   env: {
     type: 'node',
-    runner: 'node'
   },
 
   testFramework: 'ava',
@@ -19,6 +19,6 @@ module.exports = wallaby => ({
   setup: () => require('babel-polyfill'),
 
   compilers: {
-    '**/*.js': wallaby.compilers.babel()
-  }
-});
+    '**/*.js': wallaby.compilers.babel(),
+  },
+})
